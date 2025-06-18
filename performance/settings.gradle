@@ -15,3 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Performance"
 include ':app'
+include ':whitescreen'
+include ':multidex'

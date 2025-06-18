@@ -4,17 +4,23 @@ plugins {
 }
 
 android {
-    namespace 'com.seven.performance'
+    namespace 'com.seven.multidex'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.seven.performance"
-        minSdk 24
+        applicationId "com.seven.multidex"
+        minSdk 19
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexKeepFile file('maindexlist.txt') // keep specific classes
+//        maindexlist.txt将需要配置到主dex类写到这里来
+//        com/seven/launchtest/LoadMultiDexActivity.class
+
+        multiDexKeepProguard file('multiDexKeep.pro') // 打包到main dex的这些类的混淆规制，没特殊需求就给个空文件
+        multiDexKeepFile file('maindexlist.txt') // keep specific classes
     }
 
     buildTypes {
@@ -33,7 +39,7 @@ android {
 }
 
 dependencies {
-
+    implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'

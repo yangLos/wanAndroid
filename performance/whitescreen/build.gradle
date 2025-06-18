@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.seven.performance'
+    namespace 'com.seven.whitescreen'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.seven.performance"
+        applicationId "com.seven.whitescreen"
         minSdk 24
         targetSdk 33
         versionCode 1
